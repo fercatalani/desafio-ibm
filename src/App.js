@@ -1,6 +1,7 @@
+import React, { Component } from "react";
 //import api from './api';
 
-class App extends Component{
+class App extends Component {
 
   render(){
     return(
