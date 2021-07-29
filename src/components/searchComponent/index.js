@@ -4,16 +4,16 @@ import searchIcon from "../../assets/searchIcon.svg";
 
 export default function Search() {
     return(
-      <div className="searchContainer">
+      <div className="search">
         <input 
-          className="search"
+          className="input"
           type = "text" 
           placeholder = "Search..." 
         />
         <img 
           src={searchIcon} 
           alt="search icon" 
-          className="searchIcon" 
+          className="icon" 
         />
       </div>
     );
