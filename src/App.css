@@ -13,3 +13,12 @@
   max-width: 720px;
   width: 100%;
 }
+
+.containerFilter {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  margin-top: 40px;
+}

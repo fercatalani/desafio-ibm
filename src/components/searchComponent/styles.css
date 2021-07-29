@@ -1,18 +1,26 @@
-.searchContainer {
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  border: 1px solid #ccc;
+  border: 1px solid #ccc;
+  border-radius: 2px;
 }
 
-.search {
-  width: 200px;
-  height: 25px;
-  padding-left: 10px;
-  font-size: 15px;
+.search .input {
+  width: 100%;
+  height: 42px;
+  font-size: 1rem;
+  padding: 8px 50px 8px 10px;
+  background-color: #fff;
+  border: none;
 }
 
-.searchIcon {
+.search .icon {
   width: 40px;
   height: 25px;
+}
+
+.search .input:focus {
+  outline: 0;
 }

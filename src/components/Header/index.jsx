@@ -7,7 +7,7 @@ export const Header = () => (
 
     <div className="container">
       <a href="https://google.com.br">Home</a>
-      <a href="https://google.com.br">Novo livro</a>
+      <a href="https://google.com.br">New Book</a>
     </div>
   </header>
 );

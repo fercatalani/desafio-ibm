@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Search from "./components/searchComponent";
 import { BookDetail } from "./components/BookDetail";
+import { Header } from "./components/Header";
+import Dropdown from "./components/filterComponent";
+
+import categories from "./data/categories.json"
 
 import "./App.css";
 //import api from './api';
@@ -36,7 +40,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search />
+
+        <div className="containerFilter">
+          <Search />
+          <div style={{ width: 200}}>
+            <Dropdown options={categories} prompt='Select category...' />
+          </div>
+        </div>
 
         <section className="list-container">
           {books.map((book) => (
