@@ -1,0 +1,18 @@
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.search {
+  width: 200px;
+  height: 25px;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.searchIcon {
+  width: 40px;
+  height: 25px;
+}
