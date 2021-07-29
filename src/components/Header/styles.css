@@ -2,7 +2,7 @@ header {
   position: relative;
   width: 100%;
   height: 100px;
-  background: var(--blue-700);
+  background: var(--blue-gradient);
 
   box-shadow: 1px 1px 5px #ababab;
 }

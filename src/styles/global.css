@@ -4,6 +4,11 @@
   --link: #fff;
 
   --blue-700: #2c5282;
+  --blue-gradient: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    #61baff 0%,
+    #a6effd 90.1%
+  );
 
   --yellow-300: #f6e05e;
   --yellow-400: #ecc94b;
