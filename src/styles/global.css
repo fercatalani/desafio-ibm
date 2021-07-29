@@ -3,11 +3,15 @@
   --text: #000;
   --link: #fff;
 
+  --gray-400: #a0aec0;
+  --gray-500: #718096;
+  --gray-900: #171923;
+
   --blue-700: #2c5282;
   --blue-gradient: radial-gradient(
     circle farthest-corner at 10% 20%,
-    #61baff 0%,
-    #a6effd 90.1%
+    #a6effd 0%,
+    #61baff 90.1%
   );
 
   --yellow-300: #f6e05e;
