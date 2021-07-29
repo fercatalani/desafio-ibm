@@ -1,21 +1,17 @@
 import React, { Component } from "react";
-import Search from './components/searchComponent';
-import { Header } from "./components/Header";
-
+import Search from "./components/searchComponent";
 
 import "./App.css";
 //import api from './api';
 
 class App extends Component {
-
-  render(){
-    return(
+  render() {
+    return (
       <div className="App">
-        <Header />
         <Search />
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;
