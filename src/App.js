@@ -6,7 +6,7 @@ import Dropdown from "./components/Dropdown";
 import categories from "./data/categories.json"
 
 import "./App.css";
-//import api from './api';
+//import api from './api'
 
 const books = [
   {
