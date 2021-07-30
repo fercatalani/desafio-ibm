@@ -17,8 +17,19 @@
 .containerFilter {
   display: flex;
   flex-direction: row; 
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 35%;
+  width: 100%;
   margin-top: 40px;
 }
+
+@media(max-width: 500px){
+  .containerFilter{
+    display: block;
+    padding: 20px; 
+  }
+
+  .dropdown{
+    margin-top: 10px;
+  }
+ }

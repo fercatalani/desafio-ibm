@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import Search from "./components/searchComponent";
+import React, { useState } from "react";
+import Search from "./components/Search";
 import { BookDetail } from "./components/BookDetail";
-import { Header } from "./components/Header";
-import Dropdown from "./components/filterComponent";
+import Dropdown from "./components/Dropdown";
 
 import categories from "./data/categories.json"
 
@@ -36,15 +35,21 @@ const books = [
   },
 ];
 
-class App extends Component {
-  render() {
+export default function App() {
+  const [value, setValue] = useState(null)
+  
     return (
       <div className="App">
 
         <div className="containerFilter">
           <Search />
           <div style={{ width: 200}}>
-            <Dropdown options={categories} prompt='Select category...' />
+            {/* options: referenciando os dados, prompt: especificando a mensagem */}
+            <Dropdown 
+              options={categories} 
+              prompt='Categoria' 
+              value={value}
+              onChange={val => setValue(val)}/>
           </div>
         </div>
 
@@ -55,7 +60,4 @@ class App extends Component {
         </section>
       </div>
     );
-  }
-}
-
-export default App;
+};

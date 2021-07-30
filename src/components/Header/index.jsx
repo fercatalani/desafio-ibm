@@ -6,8 +6,8 @@ export const Header = () => (
     <img src={logo} alt="logo" class="logo" />
 
     <div className="container">
-      <a href="https://google.com.br">Home</a>
-      <a href="https://google.com.br">New Book</a>
+      <a href="https://google.com.br">Início</a>
+      <a href="https://google.com.br">Novo Livro</a>
     </div>
   </header>
 );

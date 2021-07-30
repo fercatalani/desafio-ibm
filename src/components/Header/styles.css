@@ -38,10 +38,20 @@ header .logo {
 
 @media (max-width: 576px) {
   header .logo {
-    display: none;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
   }
 
   header .container > a + a {
     margin-left: 3rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  header .container > a + a {
+    margin-right: 3rem;
   }
 }

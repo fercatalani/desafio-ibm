@@ -8,7 +8,7 @@ export default function Search() {
         <input 
           className="input"
           type = "text" 
-          placeholder = "Search..." 
+          placeholder = "Busca..." 
         />
         <img 
           src={searchIcon} 
