@@ -1,6 +1,6 @@
 import logo from "../../assets/images/logo.png";
 import "./styles.css";
-import React from 'react'
+import React from "react";
 
 export const Header = () => (
   <header>
@@ -8,7 +8,7 @@ export const Header = () => (
 
     <div className="container">
       <a href="https://google.com.br">Início</a>
-      <a href="https://google.com.br">Novo Livro</a>
+      <a href="https://google.com.br">Novo Livro!</a>
     </div>
   </header>
 );
