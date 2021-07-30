@@ -53,6 +53,7 @@ class App extends Component {
             <BookDetail book={book} />
           ))}
         </section>
+
       </div>
     );
   }
