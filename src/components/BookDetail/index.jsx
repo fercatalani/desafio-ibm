@@ -1,7 +1,7 @@
 import "./styles.css";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { ImBooks } from "react-icons/im";
-import React from 'react'
+import React from "react";
 
 export const BookDetail = ({ book }) => (
   <div className="book-container">
@@ -13,6 +13,7 @@ export const BookDetail = ({ book }) => (
       <p className="book-author">
         {book.author} | {book.price}
       </p>
+      <p></p>
     </div>
 
     {book.favorite && <AiFillHeart fontSize="24px" color="#F56565" />}
