@@ -2,13 +2,11 @@ import logo from "../../assets/images/logo.png";
 import "./styles.css";
 import React from "react";
 
+import Nav from "../../Nav";
+
 export const Header = () => (
   <header>
     <img src={logo} alt="logo" class="logo" />
-
-    <div className="container">
-      <a href="https://google.com.br">Início</a>
-      <a href="https://google.com.br">Novo Livro</a>
-    </div>
+    <Nav />
   </header>
 );

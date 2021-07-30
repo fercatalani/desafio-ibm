@@ -1,4 +1,13 @@
-.list-container {
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 100px;
+}
+
+.home-container .list-container {
   margin: 2rem;
   padding: 1rem;
   max-width: 720px;
@@ -7,20 +16,20 @@
 
 .containerFilter {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-top: 40px;
 }
 
-@media (max-width: 500px) {
-  .containerFilter {
+@media(max-width: 500px){
+  .containerFilter{
     display: block;
-    padding: 20px;
+    padding: 20px; 
   }
 
-  .dropdown {
+  .dropdown{
     margin-top: 10px;
   }
-}
+ }
