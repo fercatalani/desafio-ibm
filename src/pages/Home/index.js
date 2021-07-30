@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./Home.css";
+import "./styles.css";
 
-import Search from "./components/Search";
-import { BookDetail } from "./components/BookDetail";
-import Dropdown from "./components/Dropdown";
+import Search from "../../components/Search";
+import { BookDetail } from "../../components/BookDetail";
+import Dropdown from "../../components/Dropdown";
 
-import categories from "./data/categories.json"
+import categories from "../../data/categories.json"
 
 const books = [
   {

@@ -1,7 +1,7 @@
-import { div } from 'prelude-ls'
-import React from 'react'
-import './styles.css'
-import book from '../../assets/images/book.svg' // relative path to image 
+import { div } from 'prelude-ls';
+import React from 'react';
+import './styles.css';
+import book from '../../assets/images/book.svg'; // relative path to image 
 
 export default function Form() {
     return (

@@ -3,8 +3,8 @@ import "./App.css";
 
 import { Header } from "./components/Header";
 import Nav from "./Nav";
-import Home from "./Home";
-import NewBook from "./NewBook";
+import Home from "./pages/Home/index";
+import NewBook from "./pages/Form/index";
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

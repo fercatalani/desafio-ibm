@@ -1,7 +1,7 @@
 import React from "react";
-import './NewBook.css';
+import './styles.css';
 
-import Form from "./components/Form";
+import Form from "../../components/Form";
 
 export default function NewBook() {
     return (
