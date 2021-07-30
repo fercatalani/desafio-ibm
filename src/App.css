@@ -6,30 +6,3 @@
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 100px;
 }
-
-.App .list-container {
-  margin: 2rem;
-  padding: 1rem;
-  max-width: 720px;
-  width: 100%;
-}
-
-.containerFilter {
-  display: flex;
-  flex-direction: row; 
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 40px;
-}
-
-@media(max-width: 500px){
-  .containerFilter{
-    display: block;
-    padding: 20px; 
-  }
-
-  .dropdown{
-    margin-top: 10px;
-  }
- }
