@@ -1,11 +1,14 @@
+import React from "react";
 import { div } from 'prelude-ls';
-import React from 'react';
 import './styles.css';
-import book from '../../assets/images/book.svg'; // relative path to image 
+import book from '../../assets/images/book.svg'; 
 
-export default function Form() {
+
+
+export default function NewBook() {
     return (
-        <div className="screen">
+      <div className="newbook-container">
+             <div className="screen">
             <section className="image">
                 <img src={book} alt={"logo"} />
                 <h2>Cadastre seus livros</h2>
@@ -33,5 +36,6 @@ export default function Form() {
                 </form>
             </section>
         </div>
-    )
-}
+      </div>
+    );
+};

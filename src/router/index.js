@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 
-import { Header } from "./components/Header";
-import Nav from "./Nav";
-import Home from "./pages/Home/index";
-import NewBook from "./pages/Form/index";
+import { Header } from "../components/Header";
+import Nav from "../components/Menu/Nav";
+import Home from "../pages/Home";
+import NewBook from "../pages/Livro";
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
