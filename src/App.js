@@ -1,67 +1,33 @@
-import React, { useEffect, useState } from "react";
-import Search from "./components/Search";
-import { BookDetail } from "./components/BookDetail";
-import Dropdown from "./components/Dropdown";
-import api from "./services/api"
-import "./components/BookDetail/styles.css"
-
-import categories from "./data/categories.json"
-
+import React from "react";
 import "./App.css";
-//import api from './api';
 
+import { Header } from "./components/Header";
+import Nav from "./Nav";
+import Home from "./pages/Home/index";
+import NewBook from "./pages/Form/index";
 
+//renomeando para Router
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+/* BrowserRouter: tudo que estiver dentro dele tera a habilidade de roteamento
+Route: renderiza um componente com base na URL com path e especificamos qual componente em seguida
+Switch: assim que ele identifica um path, ele renderiza o componente
+
+exact: evita renderizar tudo que for identificado, e renderiza apenas aquele path exato
+*/
 
 export default function App() {
-  const [value, setValue] = useState(null);
-
-  const [livros, setLivros] = useState([])
-
-  useEffect(() => {
-    api.get("/livros")
-      .then(({ data }) => {
-        setLivros(data);
-        console.log(JSON.stringify(data))
-      })
-
-  }, [])
-
-
   return (
-    <div className="App">
-
-      <div className="containerFilter">
-        <Search />
-        <div style={{ width: 200 }}>
-          {/* options: referenciando os dados, prompt: especificando a mensagem */}
-          <Dropdown
-            options={categories}
-            prompt='Categoria'
-            value={value}
-            onChange={val => setValue(val)} />
-        </div>
+    <Router>
+      <div className="App">
+        <Header>
+        <Nav />
+        </Header>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/new-book" component={NewBook} />
+        </Switch>
       </div>
-
-
-      <section className="list-container">
-
-        {livros?.map(livro => (
-            <div className="book-container" key={livro.id}>
-              <div className="book-infos">
-                <p className="book-title">Nome: {livro.nome}</p>
-                <p className="book-description">Descrição: {livro.descricao}</p>
-                <p className="book-author">Estoque:{livro.estoque}</p>
-              </div>
-            </div>
-        ))}
-
-
-      </section>
-
-
-
-
-    </div>
+    </Router>
   );
 };
