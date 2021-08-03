@@ -13,6 +13,9 @@ export default function Nav() {
         <Link to='/new-book'>
           <li>Novo Livro!</li>
         </Link>
+        <Link to='/nova-categoria'>
+          <li>Nova Categoria</li>
+        </Link>
       </ul>
     </nav>
   )

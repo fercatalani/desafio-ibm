@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import Nav from "../components/Menu/Nav";
 import Home from "../pages/Home";
 import NewBook from "../pages/Livro";
+import NovaCategoria from "../pages/Categoria";
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -26,6 +27,7 @@ export default function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/new-book" component={NewBook} />
+          <Route path="/nova-categoria" component={NovaCategoria} />
         </Switch>
       </div>
     </Router>
