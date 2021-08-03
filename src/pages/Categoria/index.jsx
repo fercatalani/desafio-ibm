@@ -6,6 +6,7 @@ import api from "../../services/api";
 
 export default function NovaCategoria() {
   const [categorias, setCategorias] = useState(null);
+  const [category, setCategory] = useState("")
 
   useEffect(() => {
     api.get("/categories")
@@ -14,6 +15,15 @@ export default function NovaCategoria() {
         console.log(JSON.stringify(response.data));
       });
   }, []);
+
+  function createCategory() {
+    api
+      .post("/category", category)
+      .then((response) => {
+        setCategory(response.data);
+        console.log(JSON.stringify(response.data));
+      });
+  }
 
   return(
     <div className="categoria-container">
@@ -28,19 +38,23 @@ export default function NovaCategoria() {
             <h2>API Categoria - Teste</h2>
             <div>
               <label>Categoria</label>
-              <input />
+              <input 
+              value={category.name}
+              onChange={(e) => setCategory({
+                ...categorias, name: e.target.value
+              })}/>
             </div>
 
-            <button>Cadastrar</button>
+            <button onClick={createCategory}>Cadastrar</button>
+            
+          <h2>Lista de categorias</h2>
+            {categorias?.map(categoria => (
+              <ul className="listagem">
+                <li key={categoria.id}>{categoria.name}</li>
+              </ul>
+            ))}
+
           </form>
-
-          {categorias?.map(categoria => (
-
-            <ul className="listagem">
-              <h2>Lista de categorias</h2>
-              <li key={categoria.id}>{categoria.name}</li>
-            </ul>
-          ))}
         </section>
       </div>
 
