@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import api from "../../services/api";
 import "./styles.css";
 import bookImg from "../../assets/images/book.svg";
 
-export default function NewBook() {
+export default function EditBook() {
   const [categories, setCategories] = useState([]);
   const [book, setBook] = useState({
     categoria_id: "",
@@ -13,24 +14,29 @@ export default function NewBook() {
     classificacao: 0,
     sbn: "",
   });
+  const params = useParams();
+  const history = useHistory();
+
+  useEffect(() => {
+    api.get(`/livro/${params.id}`).then((response) => setBook(response.data));
+  }, [params]);
 
   useEffect(() => {
     api.get("/categories").then((response) => setCategories(response.data));
   }, []);
 
+  const bookDelete = () => {
+    if (window.confirm("Você tem certeza que deseja deletar?")) {
+      api.delete(`/livro/${params.id}`).then(() => {
+        history.goBack();
+      });
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    api.post("/livro", book).then(() => {
-      window.alert("Seu livro foi cadastrado com sucesso!");
-      setBook({
-        categoria_id: "",
-        nome: "",
-        descricao: "",
-        estoque: 0,
-        classificacao: 0,
-        sbn: "",
-      });
+    api.put(`/livro/${params.id}`, book).then(() => {
+      history.goBack();
     });
   };
 
@@ -39,11 +45,12 @@ export default function NewBook() {
       <div className="screen">
         <section className="image">
           <img src={bookImg} alt={"logo"} />
-          <h2>Cadastre seus livros</h2>
+          <h2>Edite seus livros</h2>
         </section>
+
         <section className="FormS">
           <form onSubmit={handleSubmit}>
-            <h2>Cadastre seu livro</h2>
+            <h2>Edite seu livro</h2>
             <div>
               <label>Nome</label>
               <input
@@ -66,7 +73,6 @@ export default function NewBook() {
             <div>
               <label>Estoque</label>
               <input
-                type="number"
                 value={book.estoque}
                 onChange={(e) => setBook({ ...book, estoque: e.target.value })}
               />
@@ -75,7 +81,6 @@ export default function NewBook() {
             <div>
               <label>Classificação</label>
               <input
-                type="number"
                 value={book.classificacao}
                 onChange={(e) =>
                   setBook({ ...book, classificacao: e.target.value })
@@ -94,7 +99,7 @@ export default function NewBook() {
             <div>
               <label>Categoria</label>
               <select
-                value={book.categoria_id}
+                value={book.category?.id}
                 onChange={(e) =>
                   setBook({ ...book, categoria_id: e.target.value })
                 }
@@ -107,7 +112,12 @@ export default function NewBook() {
               </select>
               <br />
             </div>
-            <button type="submit">Cadastrar</button>
+            <div className="actions-form">
+              <button type="button" onClick={bookDelete}>
+                Deletar
+              </button>
+              <button type="submit">Atualizar</button>
+            </div>
           </form>
         </section>
       </div>

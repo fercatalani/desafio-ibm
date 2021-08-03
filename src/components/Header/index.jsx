@@ -6,7 +6,7 @@ import Nav from "../Menu/Nav";
 
 export const Header = () => (
   <header>
-    <img src={logo} alt="logo" class="logo" />
+    <img src={logo} alt="logo" className="logo" />
     <Nav />
   </header>
 );
