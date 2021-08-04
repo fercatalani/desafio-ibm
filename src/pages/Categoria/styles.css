@@ -115,12 +115,25 @@ form button{
 }
 
 .listagem li {
+  position: relative;
   list-style: none;
   background-color: rgba(255, 255, 255, 0.253);
-  width: 60%;
+  width: 80%;
   padding: 20px 40px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px #ababab;
   margin: 10px;
+}
+
+.delButton {
+  display: flex;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  justify-content: center;
+  align-self: flex-end;
+  box-sizing: border-box;
+  margin: 20px 70px;
+  background-color: transparent;
 }
 
