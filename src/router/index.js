@@ -7,9 +7,11 @@ import Home from "../pages/Home";
 import NewBook from "../pages/Livro";
 import NovaCategoria from "../pages/Categoria";
 import EditBook from "../pages/EditarLivro";
+import DetailsBook from "../pages/Details"
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import detailsBook from "../pages/Details";
 
 /* BrowserRouter: tudo que estiver dentro dele tera a habilidade de roteamento
 Route: renderiza um componente com base na URL com path e especificamos qual componente em seguida
@@ -30,6 +32,7 @@ export default function App() {
           <Route path="/new-book" component={NewBook} />
           <Route path="/nova-categoria" component={NovaCategoria} />
           <Route path="/edit-book/:id" component={EditBook} />
+          <Route path="/details-Book/:id" component={DetailsBook} />
         </Switch>
       </div>
     </Router>

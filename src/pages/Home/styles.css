@@ -65,3 +65,14 @@
 }
 
 
+.button{
+  margin: 20px 0px 0px 0px ;
+}
+
+.button button{
+  border: none;
+  padding: 5px 8px 5px 8px;
+  color: #fff;
+  background: var(--blue-gradient);
+  border-radius: 5px;
+}

@@ -73,9 +73,15 @@ export default function Home() {
               <p className="book-title">Nome: {livro.nome}</p>
               <p className="book-description">Descrição: {livro.descricao}</p>
               <p className="book-author">Estoque:{livro.estoque}</p>
+              <div className="button">
+                <a href={`details-Book/${livro.id}`}><button>Ver detalhes</button> </a>
+              </div>
             </div>
             <AiOutlineArrowRight fontSize="24" />
+
+
           </a>
+
         ))}
       </section>
     </div>
