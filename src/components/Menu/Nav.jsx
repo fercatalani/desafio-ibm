@@ -9,11 +9,17 @@ export default function Nav() {
         <Link to="/">
           <li>Início</li>
         </Link>
+        {" | "}
         <Link to="/new-book">
           <li>Novo Livro</li>
         </Link>
+        {" | "}
         <Link to='/nova-categoria'>
           <li>Nova Categoria</li>
+        </Link>
+        {" | "}
+        <Link to='/novo-autor'>
+          <li>Nova Autor</li>
         </Link>
       </ul>
     </nav>
