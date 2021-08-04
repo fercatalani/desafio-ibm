@@ -6,8 +6,8 @@ import Nav from "../components/Menu/Nav";
 import Home from "../pages/Home";
 import NewBook from "../pages/Livro";
 import NovaCategoria from "../pages/Categoria";
-import EditBook from "../pages/EditarLivro";
-import DetailsBook from "../pages/Details"
+import DetailsBook from "../pages/Details";
+import EditBook from "../pages/Livro/EditarLivro";
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../services/api";
+import { createBook, getCategories } from "../../services/api";
 import "./styles.css";
 import bookImg from "../../assets/images/book.svg";
 
@@ -15,13 +15,17 @@ export default function NewBook() {
   });
 
   useEffect(() => {
-    api.get("/categories").then((response) => setCategories(response.data));
+    getCategories().then((categories) => setCategories(categories));
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    api.post("/livro", book).then(() => {
+    createBook({
+      ...book,
+      classificacao: Number(book.classificacao),
+      estoque: Number(book.estoque),
+    }).then(() => {
       window.alert("Seu livro foi cadastrado com sucesso!");
       setBook({
         categoria_id: "",

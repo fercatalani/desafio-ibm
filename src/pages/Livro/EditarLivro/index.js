@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import api from "../../services/api";
+import api, {
+  deleteBook,
+  getBookById,
+  getCategories,
+} from "../../../services/api";
 import "./styles.css";
-import bookImg from "../../assets/images/book.svg";
+import bookImg from "../../../assets/images/book.svg";
 
 export default function EditBook() {
   const [categories, setCategories] = useState([]);
@@ -18,16 +22,16 @@ export default function EditBook() {
   const history = useHistory();
 
   useEffect(() => {
-    api.get(`/livro/${params.id}`).then((response) => setBook(response.data));
+    getBookById(params.id).then((book) => setBook(book));
   }, [params]);
 
   useEffect(() => {
-    api.get("/categories").then((response) => setCategories(response.data));
+    getCategories().then((categories) => setCategories(categories));
   }, []);
 
   const bookDelete = () => {
     if (window.confirm("Você tem certeza que deseja deletar?")) {
-      api.delete(`/livro/${params.id}`).then(() => {
+      deleteBook(params.id).then(() => {
         history.goBack();
       });
     }
@@ -85,14 +89,6 @@ export default function EditBook() {
                 onChange={(e) =>
                   setBook({ ...book, classificacao: e.target.value })
                 }
-              />
-              <br />
-            </div>
-            <div>
-              <label>SBN</label>
-              <input
-                value={book.sbn}
-                onChange={(e) => setBook({ ...book, sbn: e.target.value })}
               />
               <br />
             </div>
