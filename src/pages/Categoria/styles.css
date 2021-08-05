@@ -81,7 +81,7 @@
 }
 
 input:focus {
-outline: none;
+  outline: none;
   border: none;
   border-bottom: 1px solid #a600dd;
 
@@ -125,15 +125,13 @@ form button{
   margin: 10px;
 }
 
-.delButton {
+.edit-del-button {
   display: flex;
   position: absolute;
-  width: 2em;
-  height: 2em;
-  justify-content: center;
+  width: 65px;
+  justify-content: space-between;
   align-self: flex-end;
-  box-sizing: border-box;
-  margin: 20px 70px;
+  margin: 20px 60px;
   background-color: transparent;
+  cursor: pointer;
 }
-

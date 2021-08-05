@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react';
 import book from '../../assets/images/book.svg';
 import './styles.css';
 import api from "../../services/api";
-import { FaTimesCircle } from "react-icons/fa";
+import { FaTimesCircle, FaEdit } from "react-icons/fa"; 
+import { Link } from "react-router-dom";
 
 export default function NovaCategoria() {
   const [categorias, setCategorias] = useState(null);
-  const [category, setCategory] = useState("")
+  const [category, setCategory] = useState("");
+  const [updateCategory, setUpdateCategory] = useState({
+    id: '',
+    name: ''
+  })
 
   //GET
   useEffect(() => {
@@ -29,6 +34,16 @@ export default function NovaCategoria() {
         setCategory(response.data);
         console.log(JSON.stringify(response.data));
       });
+  }
+
+  //PUT
+  function updateCategories() {
+    api
+      .put("/category", { name: updateCategory.name + " editado" })
+      .then((response) => {
+        setUpdateCategory(response.data);
+        console.log(JSON.stringify(response.data))
+      })
   }
 
   //DELETE
@@ -69,11 +84,18 @@ export default function NovaCategoria() {
               return (
               <ul className="listagem">
                 <li key={categoria.id}>{categoria.name}</li>
-                <div className="delButton">
-                  <FaTimesCircle 
-                    onClick={() => deleteCategory(categoria.id)}
-                    fontSize="35px" 
-                    color="#D2042D"
+                <div className="edit-del-button">
+                  <Link to={{pathname: `/edit/${categorias.id}`}}>
+                  <FaEdit 
+                    onClick={() => updateCategories()}
+                    fontSize="2em"
+                    color="black"
+                  />
+                  </Link>
+                    <FaTimesCircle 
+                      onClick={() => deleteCategory(categoria.id)}
+                      fontSize="2em" 
+                      color="#D2042D"
                     />
                 </div>
               </ul>
