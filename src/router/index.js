@@ -9,14 +9,11 @@ import NovaCategoria from "../pages/Categoria";
 
 import DetailsBook from "../pages/Details";
 import EditBook from "../pages/Livro/EditarLivro";
-import EditBook from "../pages/EditarLivro";
 import Autor from "../pages/Autor";
 import EditCategory from "../pages/Categoria/edit";
-import DetailsBook from "../pages/Details"
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import detailsBook from "../pages/Details";
 
 /* BrowserRouter: tudo que estiver dentro dele tera a habilidade de roteamento
 Route: renderiza um componente com base na URL com path e especificamos qual componente em seguida

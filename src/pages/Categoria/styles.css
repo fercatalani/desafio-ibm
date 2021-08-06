@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .screen section{ 
@@ -49,6 +49,7 @@
 /* Form */
 
 .cadastro{
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,11 +90,12 @@ input:focus {
 
 form{
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-form button{
+form .btn-cadastro{
   width: 70%;
   border-radius: 5px;
   padding: 10px;
@@ -105,6 +107,8 @@ form button{
   background-color: #fff;
 }
 
+/* List */
+
 .listagem {
   display: flex;
   flex-direction: column;
@@ -115,23 +119,33 @@ form button{
 }
 
 .listagem li {
-  position: relative;
   list-style: none;
   background-color: rgba(255, 255, 255, 0.253);
   width: 80%;
-  padding: 20px 40px;
+  padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px #ababab;
   margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .edit-del-button {
   display: flex;
-  position: absolute;
-  width: 65px;
   justify-content: space-between;
-  align-self: flex-end;
-  margin: 20px 60px;
+  width: 65px;
   background-color: transparent;
+  cursor: pointer;
+}
+
+form .btn-salvar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  background-color: white;
+  border: none;
   cursor: pointer;
 }

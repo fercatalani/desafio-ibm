@@ -8,15 +8,12 @@ import { Link } from "react-router-dom";
 export default function NovaCategoria() {
   const [categorias, setCategorias] = useState(null);
   const [category, setCategory] = useState("");
-  const [updateCategory, setUpdateCategory] = useState({
-    id: '',
-    name: ''
-  })
+  
 
   //GET
   useEffect(() => {
     listCategory();
-  }, []);
+  });
   
   function listCategory() {
     api.get("/categories")
@@ -34,16 +31,6 @@ export default function NovaCategoria() {
         setCategory(response.data);
         console.log(JSON.stringify(response.data));
       });
-  }
-
-  //PUT
-  function updateCategories() {
-    api
-      .put("/category", { name: updateCategory.name + " editado" })
-      .then((response) => {
-        setUpdateCategory(response.data);
-        console.log(JSON.stringify(response.data))
-      })
   }
 
   //DELETE
@@ -77,34 +64,32 @@ export default function NovaCategoria() {
               })}/>
             </div>
 
-            <button onClick={createCategory}>Cadastrar</button>
+            <button className="btn-cadastro" onClick={createCategory}>Cadastrar</button>
             
-          <h2>Lista de categorias</h2>
-            {categorias?.map(categoria => {
-              return (
-              <ul className="listagem">
-                <li key={categoria.id}>{categoria.name}</li>
-                <div className="edit-del-button">
-                  <Link to={{pathname: `/edit/${categorias.id}`}}>
-                  <FaEdit 
-                    onClick={() => updateCategories()}
-                    fontSize="2em"
-                    color="black"
-                  />
-                  </Link>
-                    <FaTimesCircle 
-                      onClick={() => deleteCategory(categoria.id)}
-                      fontSize="2em" 
-                      color="#D2042D"
-                    />
-                </div>
-              </ul>
-            )})}
-
+            <h2>Lista de categorias</h2>
+            <ul className="listagem">
+              {categorias?.map(categoria => {
+                return (
+                  <li key={categoria.id}>{categoria.name}
+                    <div className="edit-del-button">
+                      <Link to={{pathname: `/edit-category/${categoria.id}`}}>
+                      <FaEdit 
+                        fontSize="2em"
+                        color="black"
+                        />
+                      </Link>
+                      <FaTimesCircle 
+                        onClick={() => deleteCategory(categoria.id)}
+                        fontSize="2em" 
+                        color="#D2042D"
+                      />
+                    </div>
+                  </li>
+              )})}
+            </ul>
           </form>
         </section>
       </div>
-
     </div>
   );
 };
