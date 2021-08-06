@@ -26,6 +26,7 @@ export default function EditCategory() {
       .then((response) => {
         setUpdateCategory(response.data);
         console.log(JSON.stringify(response.data))
+        
       })
   }
 

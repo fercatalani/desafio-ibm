@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-// import { BookDetail } from "../Livro/BookDetail";
-import Dropdown from "../../components/Dropdown";
-import api from "../../services/api";
 import searchIcon from "../../assets/searchIcon.svg";
+import { getBooks } from "../../services/api";
 
 import categories from "../../mock/categories.json";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Home() {
   const [value, setValue] = useState(null);
-
   const [livros, setLivros] = useState([]);
-  const [repos, setRepos] = useState([])
+  const [repos, setRepos] = useState([]);
 
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0)
@@ -26,25 +23,24 @@ export default function Home() {
 
 
   useEffect(() => {
-    api.get("/books").then(({ data }) => {
-      setLivros(data);
-      setRepos(data);
-      console.log(JSON.stringify(data));
+    getBooks().then((books) => {
+      setLivros(books);
+      setRepos(books);
+      console.log(JSON.stringify(books));
     });
   }, []);
-
-
 
   const handleChange = ({ target }) => {
     if (!target.value) {
       setLivros(repos);
-      return
+      return;
     }
-    const filterLivros = repos.filter(({ nome }) => nome.includes(target.value));
+    const filterLivros = repos.filter(({ nome }) =>
+      nome.includes(target.value)
+    );
 
     setLivros(filterLivros);
-  }
-
+  };
 
   return (
     <div className="home-container" id="inicio">
@@ -56,11 +52,7 @@ export default function Home() {
             placeholder="Busca..."
             onChange={handleChange}
           />
-          <img
-            src={searchIcon}
-            alt="search icon"
-            className="icon"
-          />
+          <img src={searchIcon} alt="search icon" className="icon" />
         </div>
         
       </div>

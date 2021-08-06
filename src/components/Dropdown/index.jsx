@@ -1,4 +1,4 @@
-import { getByDisplayValue } from '@testing-library/react';
+// import { getByDisplayValue } from '@testing-library/react';
 import React, { useState, useRef, useEffect } from 'react';
 import "./styles.css";
 
@@ -66,8 +66,9 @@ export default function Dropdown({ options, prompt, value, onChange }) {
           <div className={`arrow ${open ? "open" : null}`}/>
         </div>
         <div className={`options ${open ? "open" : null}`}>
-          { filter(options).map((option) => (
+          { filter(options).map((option, index) => (
             <div 
+              key={index}
               className={`option ${
                 value === option ? "selected" : null
               }`}

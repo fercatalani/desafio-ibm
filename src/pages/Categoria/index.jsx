@@ -13,7 +13,7 @@ export default function NovaCategoria() {
   //GET
   useEffect(() => {
     listCategory();
-  }, []);
+  });
   
   function listCategory() {
     api.get("/categories")
@@ -32,8 +32,6 @@ export default function NovaCategoria() {
         console.log(JSON.stringify(response.data));
       });
   }
-
- 
 
   //DELETE
   function deleteCategory(id) {
