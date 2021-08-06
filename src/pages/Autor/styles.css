@@ -1,0 +1,39 @@
+.container_autor {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: bisque;
+ 
+}
+.topbar_autor {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  flex-direction: row;
+  
+}
+
+.form_autor {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.titulo{
+  padding-top: 20px; padding-bottom: 20px
+}
+
+.list_author {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.list_author_desc {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,21 +1,20 @@
 import React from "react";
 import "./Nav.css";
-import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <nav className="container">
-      <ul className="nav-links">
-        <Link to="/">
-          <li>Início</li>
-        </Link>
-        <Link to="/new-book">
-          <li>Novo Livro</li>
-        </Link>
-        <Link to='/nova-categoria'>
-          <li>Nova Categoria</li>
-        </Link>
-      </ul>
-    </nav>
+    <>
+      <Container>
+        <RouterLink to="/">Início</RouterLink>
+
+        <RouterLink to="/new-book">Novo Livro</RouterLink>
+
+        <RouterLink to="/nova-categoria">Nova Categoria</RouterLink>
+
+        <RouterLink to="/novo-autor">Nova Autor</RouterLink>
+      </Container>
+    </>
   );
 }

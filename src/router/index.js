@@ -6,8 +6,13 @@ import Nav from "../components/Menu/Nav";
 import Home from "../pages/Home";
 import NewBook from "../pages/Livro";
 import NovaCategoria from "../pages/Categoria";
+
 import DetailsBook from "../pages/Details";
 import EditBook from "../pages/Livro/EditarLivro";
+import EditBook from "../pages/EditarLivro";
+import Autor from "../pages/Autor";
+import EditCategory from "../pages/Categoria/edit";
+import DetailsBook from "../pages/Details"
 
 //renomeando para Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -32,6 +37,8 @@ export default function App() {
           <Route path="/new-book" component={NewBook} />
           <Route path="/nova-categoria" component={NovaCategoria} />
           <Route path="/edit-book/:id" component={EditBook} />
+          <Route path="/novo-autor" component={Autor} />
+          <Route path="/edit-category/:id" component={EditCategory} />
           <Route path="/details-Book/:id" component={DetailsBook} />
         </Switch>
       </div>
