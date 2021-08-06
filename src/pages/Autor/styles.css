@@ -25,3 +25,15 @@
 .titulo{
   padding-top: 20px; padding-bottom: 20px
 }
+
+.list_author {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.list_author_desc {
+  display: flex;
+  flex-direction: column;
+}

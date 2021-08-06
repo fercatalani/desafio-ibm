@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     baseURL: "http://169.57.99.187:30001",
-
+    headers: { 'content-type': 'application/json' },
 })
 
 export default api;
@@ -55,19 +55,30 @@ export const GetAuhorByNameAndBiography = (name, biography) => {
 
 // Insert de autor by Id
 export const InsertAuthor = async (data) => {
-    console.log('Dados recebido pelo formulario ==> ', data)
-    const resp = await api.post('/author', data);
-    console.log('Retorno InsertLivro ==> ', resp)
+    const resp = await api.post('/author', JSON.stringify(data)).then((response) => {
+        console.log('Retorno Insert Livro ==> ', response)
+        return response
+    });
+
+    return resp
 }
 
 // Delete de autor by Id
 export const DeleteAuthor = async (id) => {
-    const resp = await api.delete(`/author/${id}`)
-    console.log('DeleteLivro ==> ', resp.response)
+    const resp = await api.delete(`/author/${id}`).then((response) => {
+        console.log('Delete Livro ==> ', response)
+        return response
+    })
+
+    return resp
 }
 
 // Update de autor
 export const UpdateAuthor = async (data) => {
-    const resp = await api.put('/author', data)
-    console.log('UpdateLivro ==> ', resp.response)
+    const resp = await api.put('/author', data).then((response) => {
+        console.log('Update Livro ==> ', response)
+        return response
+    })
+
+    return resp
 }
