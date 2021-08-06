@@ -11,7 +11,6 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Home() {
   const [value, setValue] = useState(null);
-
   const [livros, setLivros] = useState([]);
   const [repos, setRepos] = useState([])
 
