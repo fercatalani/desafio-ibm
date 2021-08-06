@@ -45,19 +45,16 @@ function Autor() {
   useEffect(() => {}, [author]);
 
   async function SaveAuthor() {
-    if (!author.name === "" && !author.biography === "") {
-      if (!update) {
-        const data = author;
-        await InsertAuthor(data);
-      } else {
-        await UpdateAuthor(author);
-        setUpdate(false);
-      }
+    if (!update || (!author.name === "" && !author.biography === "")) {
+      const data = author;
+      await InsertAuthor(data);
       setShow(true);
-    }else{
-
+    } else {
+      await UpdateAuthor(author);
+      setUpdate(false);
+      setShow(true);
     }
-   
+
     cleanField();
     LoadAuthor();
   }
@@ -96,42 +93,42 @@ function Autor() {
             <Card className="mb-3" key={index}>
               <Card.Body>
                 <div className="d-flex justify-content-between">
-              <div id="desc">
-                <div>
-                  <strong>Nome: </strong> {item.name}{" "}
-                </div>
-                <div>
-                  <strong> Aniversario: </strong> {item.birthdate}{" "}
-                </div>
-                <div>
-                  <strong> Nacionalidade: </strong> {item.nationality}
-                </div>
-                <div>
-                  <strong> Biografia: </strong> {item.biography}{" "}
-                </div>
-                </div>
-              <div id="button">
-                  <Button
-                    variant="warning"
-                    type="button"
-                    onClick={() => {
-                      detail_author(item.id);
-                    }}
-                    size="md"
-                  >
-                    Detalhe
-                  </Button>{" "}
-                  <Button
-                    variant="danger"
-                    type="button"
-                    onClick={() => {
-                      delete_author(item.id);
-                    }}
-                    size="md"
-                  >
-                    Delete
-                  </Button>{" "}
-                </div>
+                  <div id="desc">
+                    <div>
+                      <strong>Nome: </strong> {item.name}{" "}
+                    </div>
+                    <div>
+                      <strong> Aniversario: </strong> {item.birthdate}{" "}
+                    </div>
+                    <div>
+                      <strong> Nacionalidade: </strong> {item.nationality}
+                    </div>
+                    <div>
+                      <strong> Biografia: </strong> {item.biography}{" "}
+                    </div>
+                  </div>
+                  <div id="button">
+                    <Button
+                      variant="warning"
+                      type="button"
+                      onClick={() => {
+                        detail_author(item.id);
+                      }}
+                      size="md"
+                    >
+                      Detalhe
+                    </Button>{" "}
+                    <Button
+                      variant="danger"
+                      type="button"
+                      onClick={() => {
+                        delete_author(item.id);
+                      }}
+                      size="md"
+                    >
+                      Delete
+                    </Button>{" "}
+                  </div>
                 </div>
               </Card.Body>
             </Card>
@@ -144,69 +141,71 @@ function Autor() {
           </div>
 
           <div>
-          <Form.Group as={Row} className="mb-3 flex " controlId="name">
-            <Form.Label column sm={2}>
-              Nome:
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Control
-                type="text"
-                placeholder="nome"
-                value={author.name}
-                onChange={(e) => setAuthor({ ...author, name: e.target.value })}
-                onBlur={() => author.name}
-              />
-            </Col>
-          </Form.Group>
+            <Form.Group as={Row} className="mb-3 flex " controlId="name">
+              <Form.Label column sm={2}>
+                Nome:
+              </Form.Label>
+              <Col sm={10}>
+                <Form.Control
+                  type="text"
+                  placeholder="nome"
+                  value={author.name}
+                  onChange={(e) =>
+                    setAuthor({ ...author, name: e.target.value })
+                  }
+                  onBlur={() => author.name}
+                />
+              </Col>
+            </Form.Group>
 
-          <Form.Group as={Row} className="mb-3 flex " controlId="nationality">
-            <Form.Label column sm={2}>
-              Nacionalidade:
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Control
-                type="text"
-                placeholder="nacionalidade"
-                value={author.nationality}
-                onChange={(e) =>
-                  setAuthor({ ...author, nationality: e.target.value })
-                }
-              />
-            </Col>
-          </Form.Group>
+            <Form.Group as={Row} className="mb-3 flex " controlId="nationality">
+              <Form.Label column sm={2}>
+                Nacionalidade:
+              </Form.Label>
+              <Col sm={10}>
+                <Form.Control
+                  type="text"
+                  placeholder="nacionalidade"
+                  value={author.nationality}
+                  onChange={(e) =>
+                    setAuthor({ ...author, nationality: e.target.value })
+                  }
+                />
+              </Col>
+            </Form.Group>
 
-          <Form.Group as={Row} className="mb-3 flex " controlId="birthdate">
-            <Form.Label column sm={2}>
-              Aniversario:
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Control
-                type="date"
-                placeholder="aniversario"
-                value={author.birthdate}
-                onChange={(e) =>
-                  setAuthor({ ...author, birthdate: e.target.value })
-                }
-              />
-            </Col>
-          </Form.Group>
+            <Form.Group as={Row} className="mb-3 flex " controlId="birthdate">
+              <Form.Label column sm={2}>
+                Aniversario:
+              </Form.Label>
+              <Col sm={10}>
+                <Form.Control
+                  type="date"
+                  placeholder="aniversario"
+                  value={author.birthdate}
+                  onChange={(e) =>
+                    setAuthor({ ...author, birthdate: e.target.value })
+                  }
+                />
+              </Col>
+            </Form.Group>
 
-          <Form.Group as={Row} className="mb-3 flex " controlId="biography">
-            <Form.Label column sm={2}>
-              Biografia:
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Control
-                type="text"
-                placeholder="biografia"
-                value={author.biography}
-                onChange={(e) =>
-                  setAuthor({ ...author, biography: e.target.value })
-                }
-                maxLength="255"
-              />
-            </Col>
-          </Form.Group>
+            <Form.Group as={Row} className="mb-3 flex " controlId="biography">
+              <Form.Label column sm={2}>
+                Biografia:
+              </Form.Label>
+              <Col sm={10}>
+                <Form.Control
+                  type="text"
+                  placeholder="biografia"
+                  value={author.biography}
+                  onChange={(e) =>
+                    setAuthor({ ...author, biography: e.target.value })
+                  }
+                  maxLength="255"
+                />
+              </Col>
+            </Form.Group>
           </div>
           <div className="d-grid gap-2">
             {!update ? (

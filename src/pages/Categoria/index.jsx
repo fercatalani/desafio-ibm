@@ -13,7 +13,7 @@ export default function NovaCategoria() {
   //GET
   useEffect(() => {
     listCategory();
-  }, []);
+  }, [categorias]);
   
   function listCategory() {
     api.get("/categories")
