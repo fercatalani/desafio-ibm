@@ -1,0 +1,41 @@
+.box-book{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.book-container1{
+    margin-top: 10%;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    flex-direction: column;
+    width: 40%;
+
+}
+.book-infos{
+    padding: 20px;
+
+}
+
+.book-container1 .title-desc{
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    background: var(--blue-gradient);
+    text-align: center;
+    color: #fff;
+}
+
+.button-detail{
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-detail button{
+    border: none;
+  padding: 5px 8px 5px 8px;
+  color: #fff;
+  background: var(--blue-gradient);
+  border-radius: 5px;
+}

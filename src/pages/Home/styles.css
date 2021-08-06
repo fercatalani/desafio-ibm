@@ -65,3 +65,32 @@
 }
 
 
+.button{
+  margin: 20px 0px 0px 0px ;
+}
+
+.button button{
+  border: none;
+  padding: 5px 8px 5px 8px;
+  color: #fff;
+  background: var(--blue-gradient);
+  border-radius: 5px;
+}
+
+.pagination{
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+  margin-bottom: 50px;
+}
+
+.pagination button{
+  padding: 0px 10px 0px 10px;
+  background-color: #fff;
+  border: none;
+  
+}
+
+.pagination button:focus{
+  color: #61baff ;
+}
