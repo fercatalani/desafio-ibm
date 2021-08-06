@@ -10,7 +10,7 @@ export default function Home() {
   const [livros, setLivros] = useState([]);
   const [repos, setRepos] = useState([]);
 
-  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0)
 
 
