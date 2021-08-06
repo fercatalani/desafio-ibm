@@ -6,6 +6,9 @@ import Nav from "../components/Menu/Nav";
 import Home from "../pages/Home";
 import NewBook from "../pages/Livro";
 import NovaCategoria from "../pages/Categoria";
+
+import DetailsBook from "../pages/Details";
+import EditBook from "../pages/Livro/EditarLivro";
 import EditBook from "../pages/EditarLivro";
 import Autor from "../pages/Autor";
 import EditCategory from "../pages/Categoria/edit";
