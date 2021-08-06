@@ -3,12 +3,10 @@ import "./styles.css";
 
 import searchIcon from "../../assets/searchIcon.svg";
 import { getBooks } from "../../services/api";
-
-import categories from "../../mock/categories.json";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Home() {
-  const [value, setValue] = useState(null);
+
   const [livros, setLivros] = useState([]);
   const [repos, setRepos] = useState([]);
 
